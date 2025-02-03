@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fylo Login</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="gradient-header"></div>
+    <div class="container">
+      <div class="login-container">
+        <img 
+          src="/logo_no_bg.png" 
+          alt="fylo" 
+          class="fylo-icon"
+        >
+        
+        <div class="card">
+          <form id="loginForm" class="login-form">
+            <input 
+              type="text" 
+              placeholder="Nome de usuário" 
+              id="username"
+              required
+            >
+            
+            <input 
+              type="email"
+              placeholder="E-mail" 
+              id="email"
+              required
+            >
+            
+            <button type="submit" class="login-button">Entrar</button>
+          </form>
+
+          <div class="remember-me">
+            <label for="rememberMe" class="checkBox">
+              <input type="checkbox" id="rememberMe" class="remember-checkbox">
+              <div></div>
+            </label>
+            <label for="rememberMe" class="remember-label">Salvar informações de login</label>
+          </div>
+          
+          <div class="create-account">
+            <a href="#" class="create-account-button">Criar nova conta</a>
+          </div>
+        </div>
+
+        <div class="pub-logo">
+          <img src="/fylo-pub.png" 
+            alt="fylo-pub" 
+          >
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
