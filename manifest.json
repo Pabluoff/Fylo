@@ -1,0 +1,8 @@
+{
+  "name": "Fylo",
+  "short_name": "Fylo",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0000",
+  "theme_color": "Black-translucent"
+}
