@@ -1,7 +1,7 @@
 {
   "name": "Fylo",
   "short_name": "Fylo",
-  "start_url": "/",
+  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#4047F7",
