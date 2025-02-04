@@ -144,7 +144,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between; /* Distribui o conteúdo verticalmente */
+    justify-content: space-between;
     height: calc(100vh - 200px);
     position: fixed;
     top: 200px;
@@ -340,7 +340,6 @@ body {
         border-top-left-radius: 30px;
         border-top-right-radius: 30px;
         padding: 20px 15px;
-        overflow: hidden;
     }
 
     .input-field,
