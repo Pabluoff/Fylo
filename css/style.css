@@ -144,7 +144,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     height: calc(100vh - 200px);
     position: fixed;
     top: 200px;
@@ -286,7 +285,7 @@ body {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    margin-top: auto; /* Empurra o botão para a parte inferior */
+    margin-top: 60px;
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -309,7 +308,6 @@ body {
     background: linear-gradient(90deg, #102b38 7%, #102b38 100%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 30px;
 }
 
 @media (min-width: 768px) {
@@ -341,6 +339,7 @@ body {
         border-top-left-radius: 30px;
         border-top-right-radius: 30px;
         padding: 20px 15px;
+        overflow: hidden;
     }
 
     .input-field,
