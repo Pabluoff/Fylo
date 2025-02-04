@@ -4,7 +4,7 @@
   "start_url": "https://pabluoff.github.io/Fylo/",
   "display": "standalone",
   "background_color": "#000000",
-  "theme_color": "#4047F7",
+  "theme_color": "transparent", 
   "description": "Fylo - Conectando o futuro, hoje.",
   "icons": [
     {
