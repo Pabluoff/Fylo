@@ -124,6 +124,10 @@ body {
     color: white;
 }
 
+.language-select option:focus {
+    background-color: #3c0c6c;
+}
+
 
 .arrow-icon {
     position: absolute;
@@ -283,9 +287,6 @@ body {
 }
 
 @media (max-width: 480px) {
-   body {
-        overflow: hidden;
-    }
 
     .login-container {
         padding: 20px 15px;
