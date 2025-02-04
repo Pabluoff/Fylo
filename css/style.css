@@ -74,6 +74,7 @@ body {
     align-items: center;
     position: relative;
     z-index: 2;
+    overflow: hidden;
 }
 
 .logo {
@@ -151,7 +152,7 @@ body {
     left: 50%;        
     transform: translateX(-50%);
     z-index: 2;       
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .login-form {
@@ -252,7 +253,7 @@ body {
     font-size: 21px;
     font-weight: bold;
     margin-bottom: 10px;
-    background: linear-gradient(90deg, rgb(187, 187, 187) 7%, rgb(235, 217, 250) 100%);
+    background: linear-gradient(90deg, #102b38 7%, #102b38 100%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
