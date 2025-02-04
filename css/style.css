@@ -34,7 +34,6 @@ body {
     animation: gradient 6s ease-in-out infinite;
     filter: brightness(120%) contrast(130%);
     z-index: 1;
-    overflow: hidden;
 }
 
 .gradient-overlay {
@@ -67,7 +66,6 @@ body {
     align-items: center;
     position: relative;
     z-index: 2;
-    overflow: hidden;
 }
 
 .logo {
@@ -316,4 +314,9 @@ body {
     .create-account {
         padding: 12px;
     }
+
+    body {
+        overflow: hidden;
+    }
+    
 }
