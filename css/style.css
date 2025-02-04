@@ -146,6 +146,12 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 70vh;
+    position: fixed;  
+    top: 200px;        
+    left: 50%;        
+    transform: translateX(-50%);
+    z-index: 2;       
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .login-form {
@@ -257,14 +263,6 @@ body {
         height: 100vh;
         position: fixed;
         display: block;
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        min-height: 100vh;
-        justify-content: center;
     }
 
     .login-container {
