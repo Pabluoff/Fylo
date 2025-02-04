@@ -96,7 +96,6 @@ body {
     display: inline-block;
 }
 
-
 .language-select {
     appearance: none;
     -webkit-appearance: none;
@@ -282,6 +281,10 @@ body {
 }
 
 @media (max-width: 480px) {
+    overflow {
+        overflow: hidden;
+    }
+
     .login-container {
         padding: 20px 15px;
     }
