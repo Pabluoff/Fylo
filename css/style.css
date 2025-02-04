@@ -63,7 +63,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 2;
 }
 
@@ -312,10 +316,5 @@ body {
     .login-button,
     .create-account {
         padding: 12px;
-    }
-
-    body {
-        overflow: hidden;
-    }
-    
+    }    
 }
