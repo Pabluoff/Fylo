@@ -90,8 +90,18 @@ body {
     z-index: 3;
 }
 
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+}
+
+
 .language-select {
-    padding: 8px 12px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 8px 36px 8px 12px;
     border-radius: 8px;
     border: 2px solid rgba(255, 255, 255, 0.2);
     background-color: transparent;
@@ -101,14 +111,25 @@ body {
     transition: border-color 0.3s ease-in-out;
 }
 
+
 .language-select:focus {
     outline: none;
     border-color: #4646463d;
 }
 
+
 .language-select option {
     background-color: #1f0540;
     color: white;
+}
+
+
+.arrow-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
 }
 
 .login-container {

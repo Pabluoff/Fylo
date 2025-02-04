@@ -1,8 +1,3 @@
-document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    console.log('Login attempt');
-});
-
 // Language switcher functionality
 function setLanguage(language) {
     document.documentElement.lang = language;
