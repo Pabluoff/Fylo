@@ -17,14 +17,20 @@
 </head>
 
 <body>
-    <div class="gradient-header"></div>
-    <div class="container">
+    <div class="min-h-screen">
+        <!-- Gradient Background -->
+        <div class="gradient-background">
+            <div class="gradient-overlay"></div>
+        </div>
+
+        <!-- Language Selector -->
         <div class="language-selector">
-            <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 9l6 6 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            <div class="custom-select">
+            <div class="select-wrapper">
+                <svg class="globe-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
                 <select id="languageSelect" class="language-select">
                     <option value="pt">Português</option>
                     <option value="en">English</option>
@@ -47,31 +53,37 @@
                     <option value="vi">Tiếng Việt</option>
                     <option value="fil">Filipino</option>
                 </select>
+                <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
             </div>
         </div>
-        <div class="logo">
-            <img src="img/logo_no_bg.png" alt="Logo" class="logo-img">
-        </div>
 
-        <div class="login-container">
-            <form id="loginForm" class="login-form">
-                <div class="input-group">
-                    <input type="text" placeholder=" " class="input-field">
-                    <label class="input-label" data-i18n="username">Nome de usuário ou email</label>
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo_no_bg.png" alt="Logo" class="logo-img">
+            </div>
+
+            <div class="login-container">
+                <form id="loginForm" class="login-form">
+                    <div class="input-group">
+                        <input type="text" placeholder=" " class="input-field">
+                        <label class="input-label" data-i18n="username">Nome de usuário ou email</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder=" " class="input-field">
+                        <label class="input-label" data-i18n="password">Senha</label>
+                    </div>
+                    <button type="submit" class="login-button" data-i18n="login">Entrar</button>
+                </form>
+
+                <a href="#" class="forgot-password" data-i18n="forgot_password">Esqueceu a senha?</a>
+
+                <button class="create-account" data-i18n="create_account">Criar nova conta</button>
+
+                <div class="brand">
+                    <p class="brand-logo">Fylo</p>
                 </div>
-                <div class="input-group">
-                    <input type="password" placeholder=" " class="input-field">
-                    <label class="input-label" data-i18n="password">Senha</label>
-                </div>
-                <button type="submit" class="login-button" data-i18n="login">Entrar</button>
-            </form>
-
-            <a href="#" class="forgot-password" data-i18n="forgot_password">Esqueceu a senha?</a>
-
-            <button class="create-account" data-i18n="create_account">Criar nova conta</button>
-
-            <div class="brand">
-                <p class="brand-logo">Fylo</p>
             </div>
         </div>
     </div>
