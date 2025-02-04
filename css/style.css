@@ -309,6 +309,7 @@ body {
     background: linear-gradient(90deg, #102b38 7%, #102b38 100%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
 }
 
 @media (min-width: 768px) {
