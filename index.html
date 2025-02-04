@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fylo - Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Fylo</title>
     <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 </head>
-
 <body>
     <div class="gradient-header"></div>
     <div class="container">
@@ -22,8 +20,14 @@
         
         <div class="login-container">
             <form id="loginForm" class="login-form">
-                <input type="text" placeholder="Nome de usuário, email ou celular" class="input-field">
-                <input type="password" placeholder="Senha" class="input-field">
+                <div class="input-group">
+                    <input type="text" placeholder=" " class="input-field">
+                    <label class="input-label">Nome de usuário, email ou celular</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder=" " class="input-field">
+                    <label class="input-label">Senha</label>
+                </div>
                 <button type="submit" class="login-button">Entrar</button>
             </form>
             
@@ -32,7 +36,7 @@
             <button class="create-account">Criar nova conta</button>
             
             <div class="brand">
-                <img src="img/fylo-pub.png" alt="Fylo" class="brand-logo">
+                <p class="brand-logo">Fylo</p>
             </div>
         </div>
     </div>
