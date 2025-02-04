@@ -304,6 +304,9 @@ body {
 
 @media (max-width: 480px) {
     .login-container {
+        border: none; 
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
         padding: 20px 15px;
         overflow: hidden;
     }
