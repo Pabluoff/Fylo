@@ -22,6 +22,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding-top: env(safe-area-inset-top); 
+    
 }
 
 .gradient-header {
@@ -282,7 +283,7 @@ body {
 }
 
 @media (max-width: 480px) {
-    overflow {
+   body {
         overflow: hidden;
     }
 
