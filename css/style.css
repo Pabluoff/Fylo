@@ -68,6 +68,7 @@ body {
     right: 0;
     bottom: 0;
     z-index: 2;
+    overflow: hidden;
 }
 
 .logo {
@@ -323,7 +324,6 @@ body {
         border-top-left-radius: 30px;
         border-top-right-radius: 30px;
         padding: 20px 15px;
-        overflow: hidden;
     }
 
     .input-field,
