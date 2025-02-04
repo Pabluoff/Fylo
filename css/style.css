@@ -211,6 +211,36 @@ body {
 }
 
 
+.clear-button,
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.6);
+    display: none;
+    transition: color 0.3s ease;
+}
+
+.clear-button:hover,
+.toggle-password:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+.input-field:not(:placeholder-shown) + .input-label + .clear-button {
+    display: block;
+}
+
+
+.input-field {
+    padding-right: 40px;
+}
+
 .login-button {
     width: 100%;
     padding: 15px;
@@ -317,4 +347,9 @@ body {
     .create-account {
         padding: 12px;
     }    
+
+    .input-field {
+        padding-right: 40px;
+    }
+    
 }
