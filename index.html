@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,25 +12,27 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
     <div class="gradient-header"></div>
     <div class="container">
         <div class="language-selector">
+            <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 9l6 6 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
             <div class="custom-select">
                 <select id="languageSelect" class="language-select">
                     <option value="pt">Português</option>
                     <option value="en">English</option>
                     <option value="es">Español</option>
                 </select>
-                <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 9l6 6 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
             </div>
         </div>
-         <div class="logo">
+        <div class="logo">
             <img src="img/logo_no_bg.png" alt="Logo" class="logo-img">
         </div>
-        
+
         <div class="login-container">
             <form id="loginForm" class="login-form">
                 <div class="input-group">
@@ -42,11 +45,11 @@
                 </div>
                 <button type="submit" class="login-button" data-i18n="login">Entrar</button>
             </form>
-            
+
             <a href="#" class="forgot-password" data-i18n="forgot_password">Esqueceu a senha?</a>
-            
+
             <button class="create-account" data-i18n="create_account">Criar nova conta</button>
-            
+
             <div class="brand">
                 <p class="brand-logo">Fylo</p>
             </div>
@@ -55,4 +58,5 @@
     <script src="js/translations.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>
