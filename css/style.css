@@ -24,7 +24,6 @@ body {
     padding-top: env(safe-area-inset-top);
 }
 
-
 .gradient-background {
     position: fixed;
     inset: 0;
@@ -38,6 +37,7 @@ body {
 
 .gradient-overlay {
     position: absolute;
+    inset: 0;
     background: linear-gradient(to bottom, transparent, rgba(7, 18, 23, 0.8));
 }
 
@@ -63,16 +63,13 @@ body {
     flex-direction: column;
     align-items: center;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     z-index: 2;
 }
 
 .logo {
     margin: 50px 0;
-    margin-top: 70px;
+    margin-top: max(70px, calc(env(safe-area-inset-top) + 20px));
 }
 
 .logo-img {
@@ -80,59 +77,6 @@ body {
     height: auto;
     opacity: 0.8;
 }
-
-.language-selector {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 3;
-}
-
-.select-wrapper {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-}
-
-.language-select {
-    appearance: none;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-    color: white;
-    font-size: 14px;
-    padding: 8px 36px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.language-select:focus {
-    outline: none;
-    border-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
-}
-
-.language-select option {
-    background-color: #1f0540;
-    color: white;
-    padding: 8px;
-}
-
-.globe-icon,
-.chevron-icon {
-    position: absolute;
-    color: rgba(255, 255, 255, 0.7);
-    pointer-events: none;
-}
-
-.globe-icon {
-    left: 12px;
-}
-
-.chevron-icon {
-    right: 12px;
-}
-
 
 .login-container {
     width: 100%;
@@ -152,7 +96,16 @@ body {
     z-index: 2;
     box-shadow: -4px -20px 53px -20px rgba(0,0,0,1);
     border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.login-content {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     overflow-y: auto;
+    padding-bottom: 20px;
 }
 
 .login-form {
@@ -164,7 +117,6 @@ body {
     gap: 15px;
 }
 
-
 .input-group {
     position: relative;
     width: 100%;
@@ -173,6 +125,7 @@ body {
 .input-field {
     width: 100%;
     padding: 16px;
+    padding-right: 40px;
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     background-color: transparent;
@@ -210,7 +163,6 @@ body {
     color: transparent;
 }
 
-
 .clear-button,
 .toggle-password {
     position: absolute;
@@ -231,14 +183,8 @@ body {
     color: rgba(255, 255, 255, 0.9);
 }
 
-
 .input-field:not(:placeholder-shown) + .input-label + .clear-button {
     display: block;
-}
-
-
-.input-field {
-    padding-right: 40px;
 }
 
 .login-button {
@@ -261,7 +207,6 @@ body {
     box-shadow: 0 4px 15px rgba(0, 149, 246, 0.3);
 }
 
-
 .forgot-password {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
@@ -272,6 +217,16 @@ body {
 
 .forgot-password:hover {
     color: white;
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: auto;
 }
 
 .create-account {
@@ -285,10 +240,10 @@ body {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 60px;
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
+    margin-bottom: 20px;
 }
 
 .create-account:hover {
@@ -296,18 +251,66 @@ body {
     box-shadow: 0 4px 15px rgba(0, 149, 246, 0.2);
 }
 
+.language-selector {
+    width: 100%;
+    max-width: 400px;
+    margin: 10px 0;
+}
+
+.select-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.language-select {
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    padding: 8px 36px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 100%;
+}
+
+.language-select:focus {
+    outline: none;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.language-select option {
+    background-color: #1f0540;
+    color: white;
+    padding: 8px;
+}
+
+.globe-icon,
+.chevron-icon {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.6);
+    pointer-events: none;
+}
+
+.globe-icon {
+    left: 12px;
+}
+
+.chevron-icon {
+    right: 12px;
+}
+
 .brand {
-    margin-top: 19px;
+    margin-top: 15px;
     text-align: center;
 }
 
 .brand-logo {
-    font-size: 21px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    background: linear-gradient(90deg, #102b38 7%, #102b38 100%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.4);
 }
 
 @media (min-width: 768px) {
@@ -322,6 +325,11 @@ body {
         min-height: auto;
         padding: 40px;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        height: auto;
+        position: relative;
+        top: 0;
+        transform: none;
+        margin-top: 20px;
     }
 
     .logo {
@@ -331,25 +339,28 @@ body {
     .logo-img {
         width: 130px;
     }
+
+    .footer {
+        margin-top: 40px;
+    }
 }
 
 @media (max-width: 480px) {
     .login-container {
-        border: none; 
+        border: none;
         border-top-left-radius: 30px;
         border-top-right-radius: 30px;
         padding: 20px 15px;
-        overflow: hidden;
+        padding-bottom: env(safe-area-inset-bottom);
     }
 
     .input-field,
     .login-button,
     .create-account {
         padding: 12px;
-    }    
-
-    .input-field {
-        padding-right: 40px;
     }
-    
+
+    .footer {
+        padding-bottom: max(20px, env(safe-area-inset-bottom));
+    }
 }
