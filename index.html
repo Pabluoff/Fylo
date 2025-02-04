@@ -16,35 +16,26 @@
 <body>
     <div class="gradient-header"></div>
     <div class="container">
+        <div class="logo">
+            <img src="img/logo_no_bg.png" alt="Logo" class="logo-img">
+        </div>
+        
         <div class="login-container">
-            <img src="img/logo_no_bg.png" alt="Fylo" class="fylo-icon">
-
-            <div class="card">
-                <form id="loginForm" class="login-form">
-                    <input type="text" placeholder="Nome de usuário ou email" id="username" required>
-                    <input type="password" placeholder="Senha" id="password" required>
-                    <button type="submit" class="login-button">Entrar</button>
-                </form>
-
-                <div class="remember-me">
-                    <label for="rememberMe" class="checkBox">
-                        <input type="checkbox" id="rememberMe" class="remember-checkbox">
-                        <div></div>
-                    </label>
-                    <label for="rememberMe" class="remember-label">Salvar informações de login</label>
-                </div>
-
-                <div class="create-account">
-                    <a href="#" class="create-account-button">Criar nova conta</a>
-                </div>
-            </div>
-
-            <div class="pub-logo">
-                <img src="img/fylo-pub.png" alt="Fylo pub">
+            <form id="loginForm" class="login-form">
+                <input type="text" placeholder="Nome de usuário, email ou celular" class="input-field">
+                <input type="password" placeholder="Senha" class="input-field">
+                <button type="submit" class="login-button">Entrar</button>
+            </form>
+            
+            <a href="#" class="forgot-password">Esqueceu a senha?</a>
+            
+            <button class="create-account">Criar nova conta</button>
+            
+            <div class="brand">
+                <img src="img/fylo-pub.png" alt="Fylo" class="brand-logo">
             </div>
         </div>
     </div>
-    <script type="module" src="script.js"></script>
+    <script src="main.js"></script>
 </body>
-
 </html>
