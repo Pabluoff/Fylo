@@ -30,7 +30,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    height: 80vh;
+    height: 60vh;
     background: linear-gradient(45deg, #4047F7, #8A00D4, #4047F7);
     background-size: 300% 300%;
     animation: gradientAnimation 6s ease-in-out infinite, glowEffect 3s ease-in-out infinite alternate;
