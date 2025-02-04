@@ -262,26 +262,108 @@ body {
     box-shadow: 0 4px 15px rgba(64, 71, 247, 0.3);
 }
 
-.create-account-link {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    margin: 20px 0;
-    font-size: 15px;
-    font-weight: 500;
-    display: inline-block;
-    transition: color 0.3s ease, transform 0.2s ease;
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 
-.create-account-link strong {
+.remember-me {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+}
+
+.remember-me .custom-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    left: 3px;
+    height: 18px;
+    width: 18px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+.remember-me:hover .checkmark {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.remember-me .custom-checkbox:checked ~ .checkmark {
+    background-color: #9d00ff;
+    border-color: #ba40f7;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.remember-me .custom-checkbox:checked ~ .checkmark:after {
+    display: block;
+}
+
+.remember-text {
+    margin-left: 2px;
+}
+
+.forgot-password {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.create-account-button {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px 20px;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.create-account-button strong {
     color: #fff;
 }
 
-.create-account-link strong:hover {
+.create-account-button:hover strong {
     text-decoration: underline;
 }
 
 .brand {
-    margin-top: 18vh;
+    margin-top: 18px;
     text-align: center;
 }
 
@@ -323,6 +405,12 @@ body {
     .logo-img {
         width: 130px;
     }
+
+    .brand {
+        margin-top: 7vh;
+        text-align: center;
+    }
+    
 }
 
 @media (max-width: 480px) {
