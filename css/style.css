@@ -24,7 +24,7 @@ body {
     padding-top: env(safe-area-inset-top);
 }
 
-/* Gradient Background */
+
 .gradient-background {
     position: fixed;
     inset: 0;
@@ -39,24 +39,6 @@ body {
 .gradient-overlay {
     position: absolute;
     background: linear-gradient(to bottom, transparent, rgba(7, 18, 23, 0.8));
-}
-
-.input-group {
-    position: relative;
-}
-
-.input-group span {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 18px;
-}
-
-.input-group span:hover {
-    color: rgba(255, 255, 255, 0.9);
 }
 
 @keyframes gradient {
@@ -151,7 +133,7 @@ body {
     right: 12px;
 }
 
-/* Login Container */
+
 .login-container {
     width: 100%;
     background-color: rgba(10, 20, 23, 0.95);
@@ -162,7 +144,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 70vh;
+    height: calc(100vh - 200px);
     position: fixed;
     top: 200px;
     left: 50%;
@@ -170,6 +152,7 @@ body {
     z-index: 2;
     box-shadow: -4px -20px 53px -20px rgba(0,0,0,1);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow-y: auto;
 }
 
 .login-form {
@@ -181,7 +164,7 @@ body {
     gap: 15px;
 }
 
-/* Input Fields */
+
 .input-group {
     position: relative;
     width: 100%;
@@ -227,7 +210,7 @@ body {
     color: transparent;
 }
 
-/* Buttons */
+
 .login-button {
     width: 100%;
     padding: 15px;
