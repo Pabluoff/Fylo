@@ -246,7 +246,7 @@ body {
     padding: 15px;
     border-radius: 12px;
     border: none;
-    background: linear-gradient(135deg, #0095f6, #0077ff);
+    background: linear-gradient(135deg, #4047F7, #8A00D4);
     color: white;
     font-size: 16px;
     font-weight: bold;
@@ -258,8 +258,10 @@ body {
 }
 
 .login-button:hover {
-    box-shadow: 0 4px 15px rgba(0, 149, 246, 0.3);
+    background: linear-gradient(135deg, #8A00D4, #4047F7);
+    box-shadow: 0 4px 15px rgba(64, 71, 247, 0.3);
 }
+
 
 .form-options {
     display: flex;
@@ -269,67 +271,125 @@ body {
     margin-bottom: 15px;
 }
 
-.remember-me {
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding-left: 28px;
+.checkbox-wrapper-4 * {
+    box-sizing: border-box;
+    color: #ffffffb3;
+  }
+  
+  .checkbox-wrapper-4 .cbx {
+    -webkit-user-select: none;
+    user-select: none;
     cursor: pointer;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 14px;
-}
-
-.remember-me .custom-checkbox {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-
-.checkmark {
-    position: absolute;
-    left: 3px;
-    height: 18px;
-    width: 18px;
-    background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 3px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    overflow: hidden;
     transition: all 0.2s ease;
-}
-
-.remember-me:hover .checkmark {
-    border-color: rgba(255, 255, 255, 0.5);
-}
-
-.remember-me .custom-checkbox:checked ~ .checkmark {
-    background-color: #9d00ff;
-    border-color: #ba40f7;
-}
-
-.checkmark:after {
-    content: "";
+    display: inline-block;
+  }
+  
+  .checkbox-wrapper-4 .cbx:not(:last-child) {
+    margin-right: 6px;
+  }
+    
+  .checkbox-wrapper-4 .cbx span {
+    float: left;
+    vertical-align: middle;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .checkbox-wrapper-4 .cbx span:first-child {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    transform: scale(1);
+    border: 1px solid #ffffffb3;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 1px rgba(0, 16, 75, 0.05);
+  }
+  
+  .checkbox-wrapper-4 .cbx span:first-child svg {
     position: absolute;
-    display: none;
-    left: 6px;
-    top: 2px;
-    width: 4px;
-    height: 9px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-}
+    top: 3px;
+    left: 2px;
+    fill: none;
+    stroke: #ffffffb3;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 16px;
+    stroke-dashoffset: 16px;
+    transition: all 0.3s ease;
+    transition-delay: 0.1s;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .checkbox-wrapper-4 .cbx span:last-child {
+    padding-left: 8px;
+    line-height: 18px;
+  }
+  
+  .checkbox-wrapper-4 .cbx:hover span:first-child {
+    border-color: #ffffff;
+  }
+  
+  .checkbox-wrapper-4 .inp-cbx {
+    position: absolute;
+    visibility: hidden;
+  }
+  
+  .checkbox-wrapper-4 .inp-cbx:checked + .cbx span:first-child {
+    background: #b300ff;
+    border-color: #b300ff;
+    animation: wave-4 0.4s ease;
+  }
+  
+  .checkbox-wrapper-4 .inp-cbx:checked + .cbx span:first-child svg {
+    stroke-dashoffset: 0;
+  }
+  
+  .checkbox-wrapper-4 .inline-svg {
+    position: absolute;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    user-select: none;
+  }
+  
+  @media screen and (max-width: 840px) {
+    .checkbox-wrapper-4 .cbx {
+      width: 100%;
+      display: inline-block;
+    }
+  }
+  
+  @-moz-keyframes wave-4 {
+    50% {
+      transform: scale(0.9);
+    }
+  }
+  
+  @-webkit-keyframes wave-4 {
+    50% {
+      transform: scale(0.9);
+    }
+  }
+  
+  @-o-keyframes wave-4 {
+    50% {
+      transform: scale(0.9);
+    }
+  }
+  
+  @keyframes wave-4 {
+    50% {
+      transform: scale(0.9);
+    }
+  }
 
-.remember-me .custom-checkbox:checked ~ .checkmark:after {
-    display: block;
-}
-
-.remember-text {
-    margin-left: 2px;
-}
-
+  
 .forgot-password {
-    color: rgba(255, 255, 255, 0.7);
+    color: #ffffffb3;
     font-size: 14px;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -341,24 +401,23 @@ body {
 }
 
 .create-account-button {
-    width: 100%;
-    padding: 13px;
-    border-radius: 12px;
-    color: var(--fylo-blue);
     background: transparent;
-    border: 2px solid var(--fylo-blue);
-    font-size: 16px;
-    font-weight: bold;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px 20px;
+    margin: 20px 0;
     cursor: pointer;
-    margin-top: 10px;
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
 }
 
-.create-account-button:hover {
-    background: rgba(0, 149, 246, 0.15);
-    box-shadow: 0 4px 15px rgba(0, 149, 246, 0.2);
+.create-account-button strong {
+    color: #fff;
+}
+
+.create-account-button:hover strong {
+    text-decoration: underline;
 }
 
 .brand {

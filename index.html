@@ -41,22 +41,27 @@
                         <input type="password" placeholder=" " class="input-field">
                         <label class="input-label" data-i18n="password">Senha</label>
                     </div>
-                    <button type="submit" class="login-button" data-i18n="login">Entrar</button>
 
                     <div class="form-options">
-                        <label class="remember-me">
-                            <input type="checkbox" class="custom-checkbox">
-                            <span class="checkmark"></span>
-                            <span class="remember-text">Lembrar-me</span>
-                        </label>
+                        <div class="checkbox-wrapper-4">
+                            <input type="checkbox" id="morning" class="inp-cbx" />
+                            <label for="morning" class="cbx"><span> <svg height="10px"
+                                        width="12px"></svg></span><span>Lembrar-me</span></label>
+                            <svg class="inline-svg">
+                                <symbol viewBox="0 0 12 10" id="check-4">
+                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                </symbol>
+                            </svg>
+                        </div>
                         <a href="#" class="forgot-password">Esqueceu a senha?</a>
                     </div>
 
+                    <button type="submit" class="login-button" data-i18n="login">Entrar</button>
                 </form>
 
-                <button class="create-account-button" data-i18n="create_account">
-                    Criar conta
-                </button>
+                <a class="create-account-button" data-i18n="create_account">
+                    Ainda não tem conta? <strong>Cadastre-se</strong>
+                </a>
 
                 <div class="brand">
                     <p class="brand-logo">Fylo</p>
