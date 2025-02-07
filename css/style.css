@@ -72,13 +72,12 @@ body {
 
 .logo {
     margin: 50px 0;
-    margin-top: 70px;
+    margin-top: 60px;
 }
 
 .logo-img {
-    width: 100px;
+    width: 110px;
     height: auto;
-    opacity: 0.8;
 }
 
 .language-selector {
