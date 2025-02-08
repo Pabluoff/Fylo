@@ -80,58 +80,6 @@ body {
     height: auto;
 }
 
-.language-selector {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 3;
-}
-
-.select-wrapper {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-}
-
-.language-select {
-    appearance: none;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-    color: white;
-    font-size: 14px;
-    padding: 8px 36px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.language-select:focus {
-    outline: none;
-    border-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
-}
-
-.language-select option {
-    background-color: #1f0540;
-    color: white;
-    padding: 8px;
-}
-
-.globe-icon,
-.chevron-icon {
-    position: absolute;
-    color: rgba(255, 255, 255, 0.7);
-    pointer-events: none;
-}
-
-.globe-icon {
-    left: 12px;
-}
-
-.chevron-icon {
-    right: 12px;
-}
-
 
 .login-container {
     width: 100%;

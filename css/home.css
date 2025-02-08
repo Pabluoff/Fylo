@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+.app {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    border-bottom: 1px solid #262626;
+    position: sticky;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.952);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+}
+
+.Fylo-logo {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.header-actions {
+    display: flex;
+    gap: 16px;
+}
+
+/* Stories */
+.stories {
+    display: flex;
+    overflow-x: auto;
+    padding: 16px;
+    border-bottom: 1px solid #262626;
+    gap: 16px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.stories::-webkit-scrollbar {
+    display: none;
+}
+
+.story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.story:hover {
+    transform: scale(1.05);
+}
+
+.story-ring {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #8b5cf6, #6366f1);
+    padding: 2px;
+}
+
+.story img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    object-fit: cover;
+}
+
+.story span {
+    font-size: 12px;
+    color: #fff;
+    max-width: 64px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Post */
+.post {
+    border-bottom: 1px solid #262626;
+    margin-bottom: 12px;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.user-info img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 0.5px solid #262626;
+}
+
+.username {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.verified {
+    color: #3897f0;
+    margin-left: 4px;
+}
+
+.post-content {
+    position: relative;
+    aspect-ratio: 1/1;
+    background-color: #262626;
+}
+
+.post-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+}
+
+.left-actions {
+    display: flex;
+    gap: 16px;
+}
+
+/* Navigation Bar */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid #262626;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    color: #fff;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+    margin-bottom: 30px;
+}
+
+.nav-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.new-post-button {
+    color: #8b5cf6;
+}
+
+.profile-pic {
+    width: 24px;
+    height: 24px;
+    position: relative;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.status-dot {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 9px;
+    height: 9px;
+    background-color: #b700ff;
+    border-radius: 50%;
+    border: 2px solid #000;
+}
+
+/* Like animation */
+.like-animation {
+    animation: likeScale 0.3s ease-in-out;
+}
+
+@keyframes likeScale {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Double tap to like */
+.double-tap-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart-animation {
+    position: absolute;
+    opacity: 0;
+    transform: scale(0);
+    color: #fff;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+.heart-animation.active {
+    animation: heartBurst 1s ease-out forwards;
+}
+
+@keyframes heartBurst {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    15% {
+        opacity: 0.9;
+        transform: scale(1.2);
+    }
+    30% {
+        opacity: 0.8;
+        transform: scale(0.9);
+    }
+    45%, 80% {
+        opacity: 0.9;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+.post-info {
+    padding: 0 12px 12px;
+}
+
+.post-info .likes {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.post-info .caption {
+    margin-bottom: 4px;
+}
+
+.post-info .comments {
+    color: #a8a8a8;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.post-info .timestamp {
+    color: #a8a8a8;
+    font-size: 10px;
+    margin-top: 4px;
+    text-transform: uppercase;
+}
