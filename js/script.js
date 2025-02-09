@@ -1,7 +1,8 @@
 // Form validation and submission
 const loginForm = document.getElementById('loginForm');
-const emailInput = document.querySelector('input[type="text"]');
+const emailOrUsernameInput = document.querySelector('input[type="text"]');
 const passwordInput = document.querySelector('input[type="password"]');
+const loginButton = document.querySelector('.login-button');
 
 // Create notification container
 const notificationContainer = document.createElement('div');
@@ -9,71 +10,71 @@ notificationContainer.className = 'notification-container';
 document.body.appendChild(notificationContainer);
 
 function showNotification(message, type) {
-  // Remove existing notifications
-  const existingNotifications = document.querySelectorAll('.notification');
-  existingNotifications.forEach(notification => {
-      notification.classList.remove('show');
-      setTimeout(() => notification.remove(), 500);
-  });
-  
-  const notification = document.createElement('div');
-  notification.className = `notification ${type}`;
-  
-  // Add icon based on notification type
-  const icon = document.createElement('div');
-  icon.className = 'notification-icon';
-  if (type === 'success') {
-      icon.innerHTML = `
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-              <polyline points="22 4 12 14.01 9 11.01"></polyline>
-          </svg>
-      `;
-  } else if (type === 'error') {
-      icon.innerHTML = `
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="12" y1="8" x2="12" y2="12"></line>
-              <line x1="12" y1="16" x2="12" y2="16"></line>
-          </svg>
-      `;
-  } else {
-      icon.innerHTML = `
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="12" y1="16" x2="12" y2="12"></line>
-              <line x1="12" y1="8" x2="12" y2="8"></line>
-          </svg>
-      `;
-  }
-  
-  notification.appendChild(icon);
-  notification.appendChild(document.createTextNode(message));
-  
-  notificationContainer.appendChild(notification);
-  
-  // Force reflow to ensure animation plays
-  notification.offsetHeight;
-  
-  // Animate in
-  requestAnimationFrame(() => {
-      notification.classList.add('show');
-  });
-  
-  // Add haptic feedback if available
-  if ('vibrate' in navigator) {
-      navigator.vibrate(40);
-  }
-  
-  // Remove after delay
-  setTimeout(() => {
-      notification.classList.remove('show');
-      setTimeout(() => notification.remove(), 500);
-  }, 4000);
+    // Remove existing notifications
+    const existingNotifications = document.querySelectorAll('.notification');
+    existingNotifications.forEach(notification => {
+        notification.classList.remove('show');
+        setTimeout(() => notification.remove(), 500);
+    });
+    
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    
+    // Add icon based on notification type
+    const icon = document.createElement('div');
+    icon.className = 'notification-icon';
+    if (type === 'success') {
+        icon.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+        `;
+    } else if (type === 'error') {
+        icon.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12" y2="16"></line>
+            </svg>
+        `;
+    } else {
+        icon.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12" y2="8"></line>
+            </svg>
+        `;
+    }
+    
+    notification.appendChild(icon);
+    notification.appendChild(document.createTextNode(message));
+    
+    notificationContainer.appendChild(notification);
+    
+    // Force reflow to ensure animation plays
+    notification.offsetHeight;
+    
+    // Animate in
+    requestAnimationFrame(() => {
+        notification.classList.add('show');
+    });
+    
+    // Add haptic feedback if available
+    if ('vibrate' in navigator) {
+        navigator.vibrate(40);
+    }
+    
+    // Remove after delay
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => notification.remove(), 500);
+    }, 4000);
 }
 
-// Email clear button functionality
-const emailInputGroup = emailInput.parentElement;
+// Email/Username clear button functionality
+const inputGroup = emailOrUsernameInput.parentElement;
 const clearButton = document.createElement('button');
 clearButton.type = 'button';
 clearButton.className = 'clear-button';
@@ -83,17 +84,17 @@ clearButton.innerHTML = `
         <line x1="6" y1="6" x2="18" y2="18"></line>
     </svg>
 `;
-emailInputGroup.appendChild(clearButton);
+inputGroup.appendChild(clearButton);
 
-emailInput.addEventListener('input', () => {
-    clearButton.style.display = emailInput.value ? 'block' : 'none';
+emailOrUsernameInput.addEventListener('input', () => {
+    clearButton.style.display = emailOrUsernameInput.value ? 'block' : 'none';
 });
 
 clearButton.addEventListener('click', (event) => {
     event.preventDefault();
-    emailInput.value = '';
+    emailOrUsernameInput.value = '';
     clearButton.style.display = 'none';
-    emailInput.focus();
+    emailOrUsernameInput.focus();
 });
 
 // Password visibility toggle
@@ -135,21 +136,46 @@ toggleButton.addEventListener('click', (event) => {
     `;
 });
 
+// Validation functions
+function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function isValidUsername(username) {
+    // Username should be at least 3 characters and only contain letters, numbers, dots and underscores
+    return /^[a-zA-Z0-9._]{3,}$/.test(username);
+}
+
+function validateInput(value) {
+    if (value.includes('@')) {
+        return isValidEmail(value) ? true : 'Email inválido';
+    } else {
+        return isValidUsername(value) ? true : 'Nome de usuário inválido';
+    }
+}
+
+// Loading state management
+function setLoading(isLoading) {
+    loginButton.disabled = isLoading;
+    loginButton.classList.toggle('loading', isLoading);
+}
+
 // Form submission
 loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    const email = emailInput.value.trim();
+    const emailOrUsername = emailOrUsernameInput.value.trim();
     const password = passwordInput.value.trim();
     
     // Validation
-    if (!email || !password) {
+    if (!emailOrUsername || !password) {
         showNotification('Por favor, preencha todos os campos', 'error');
         return;
     }
     
-    if (!isValidEmail(email)) {
-        showNotification('Por favor, insira um email válido', 'error');
+    const validation = validateInput(emailOrUsername);
+    if (validation !== true) {
+        showNotification(validation, 'error');
         return;
     }
     
@@ -159,27 +185,27 @@ loginForm.addEventListener('submit', async (e) => {
     }
     
     try {
+        setLoading(true);
+        
         // Simulate API call - Replace with your actual authentication logic
         await new Promise(resolve => setTimeout(resolve, 1000));
         
         // For demo purposes - replace with actual credentials check
-        if (email === 'demo@example.com' && password === 'password123') {
+        if ((emailOrUsername === 'demo@example.com' || emailOrUsername === 'pabluoff') && password === '00000000') {
             showNotification('Login realizado com sucesso!', 'success');
             setTimeout(() => {
                 window.location.href = 'home.html';
             }, 1000);
         } else {
             showNotification('Credenciais inválidas', 'error');
+            setLoading(false);
         }
     } catch (error) {
         showNotification('Erro ao fazer login. Tente novamente.', 'error');
+        setLoading(false);
     }
 });
 
-// Email validation helper
-function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
 
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js')
