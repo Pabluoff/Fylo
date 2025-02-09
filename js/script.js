@@ -9,37 +9,67 @@ notificationContainer.className = 'notification-container';
 document.body.appendChild(notificationContainer);
 
 function showNotification(message, type) {
-    // Remove existing notifications
-    const existingNotifications = document.querySelectorAll('.notification');
-    existingNotifications.forEach(notification => {
-        notification.classList.remove('show');
-        setTimeout(() => notification.remove(), 500);
-    });
-    
-    const notification = document.createElement('div');
-    notification.className = `notification ${type}`;
-    notification.textContent = message;
-    
-    notificationContainer.appendChild(notification);
-    
-    // Force reflow to ensure animation plays
-    notification.offsetHeight;
-    
-    // Animate in
-    requestAnimationFrame(() => {
-        notification.classList.add('show');
-    });
-    
-    // Add haptic feedback if available
-    if ('vibrate' in navigator) {
-        navigator.vibrate(40);
-    }
-    
-    // Remove after delay
-    setTimeout(() => {
-        notification.classList.remove('show');
-        setTimeout(() => notification.remove(), 500);
-    }, 4000);
+  // Remove existing notifications
+  const existingNotifications = document.querySelectorAll('.notification');
+  existingNotifications.forEach(notification => {
+      notification.classList.remove('show');
+      setTimeout(() => notification.remove(), 500);
+  });
+  
+  const notification = document.createElement('div');
+  notification.className = `notification ${type}`;
+  
+  // Add icon based on notification type
+  const icon = document.createElement('div');
+  icon.className = 'notification-icon';
+  if (type === 'success') {
+      icon.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+      `;
+  } else if (type === 'error') {
+      icon.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12" y2="16"></line>
+          </svg>
+      `;
+  } else {
+      icon.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12" y2="8"></line>
+          </svg>
+      `;
+  }
+  
+  notification.appendChild(icon);
+  notification.appendChild(document.createTextNode(message));
+  
+  notificationContainer.appendChild(notification);
+  
+  // Force reflow to ensure animation plays
+  notification.offsetHeight;
+  
+  // Animate in
+  requestAnimationFrame(() => {
+      notification.classList.add('show');
+  });
+  
+  // Add haptic feedback if available
+  if ('vibrate' in navigator) {
+      navigator.vibrate(40);
+  }
+  
+  // Remove after delay
+  setTimeout(() => {
+      notification.classList.remove('show');
+      setTimeout(() => notification.remove(), 500);
+  }, 4000);
 }
 
 // Email clear button functionality

@@ -10,6 +10,10 @@ body {
     color: #fff;
 }
 
+:root {
+    --status-bar: #00000000;
+}
+
 .app {
     max-width: 600px;
     margin: 0 auto;
