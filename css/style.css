@@ -514,7 +514,7 @@ body {
   
   .modal-content {
     position: relative;
-    top: 10%;
+    top: 9%;
     transform: translateY(-50%);
     width: 100%;
     max-width: 480px;
@@ -539,6 +539,7 @@ body {
     }
 }
 
+
 input[type="date"] {
     appearance: none;
     -webkit-appearance: none;
@@ -550,6 +551,7 @@ input[type="date"] {
     padding: 16px;
     border-radius: 12px;
     width: 100%;
+    transition: all 0.3s ease;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -557,7 +559,56 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     opacity: 0.5;
     cursor: pointer;
 }
-  
+
+
+input[type="date"]:-webkit-autofill,
+input[type="date"]:-webkit-autofill:hover,
+input[type="date"]:-webkit-autofill:focus,
+input[type="date"]:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px var(--card-bg) inset !important;
+    -webkit-text-fill-color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+input[type="date"]:-moz-autofill {
+    background-color: var(--card-bg) !important;
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+
+input[type="date"]:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+
+.modal-input-label {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+input[type="date"]:focus + .modal-input-label,
+input[type="date"]:not(:placeholder-shown) + .modal-input-label,
+input[type="date"]:-webkit-autofill + .modal-input-label {
+    top: 0;
+    font-size: 12px;
+    background-color: var(--card-bg);
+    padding: 0 4px;
+}
+
+input[type="date"]::placeholder {
+    color: transparent;
+}
+
   .modal.show .modal-content {
     transform: translateY(0);
   }
@@ -594,7 +645,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     line-height: 1.4;
   }
   
-/* Estilo para os labels dos inputs do registro */
+
 .modal-input-group {
     position: relative;
     margin-bottom: 20px;
@@ -640,7 +691,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: transparent;
 }
 
-/* Estilo para as mensagens de validação */
+
 .email-validation-message,
 .password-validation-message,
 .birthday-validation-message,
@@ -648,7 +699,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     position: absolute;
     left: 0;
     bottom: -20px;
-    color: #ff4444; /* Cor para mensagens de erro */
+    color: #ff4444;
     font-size: 12px;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -661,11 +712,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     opacity: 1;
 }
 
-/* Estilo para mensagens de sucesso (opcional) */
+
 .birthday-validation-message.success {
-    color: #4CAF50; /* Cor para mensagens de sucesso */
+    color: #4CAF50;
 }
-  
+
   .modal-button {
     width: 100%;
     padding: 16px;
@@ -706,7 +757,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background: rgba(255, 255, 255, 0.1);
   }
   
-  /* Password Step */
+ 
   .modal-step {
     display: none;
     opacity: 0;
