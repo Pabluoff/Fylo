@@ -25,9 +25,8 @@
         </div>
         <div class="container">
             <div class="logo">
-                <svg class="logo-img" version="1.0" xmlns="http://www.w3.org/2000/svg" width="250px"
-                    height="225px" viewBox="0 0 300 270" preserveAspectRatio="xMidYMid meet"
-                    shape-rendering="geometricPrecision">
+                <svg class="logo-img" version="1.0" xmlns="http://www.w3.org/2000/svg" width="250px" height="225px"
+                    viewBox="0 0 300 270" preserveAspectRatio="xMidYMid meet" shape-rendering="geometricPrecision">
                     <g transform="translate(0,270) scale(0.1,-0.1)" fill="#ffffffc4" stroke="none" stroke-width="0">
                         <path d="M1695 2361 c-16 -10 -109 -87 -205 -170 -96 -83 -180 -151 -185 -151 
                             -6 0 -29 18 -50 40 -44 45 -72 50 -102 18 -12 -13 -57 -95 -101 -183 -82 -164 
@@ -37,14 +36,14 @@
                             29 0 57 41 145 221 63 127 85 182 81 197 -4 12 -70 94 -147 183 -76 89 -139 
                             167 -139 173 0 14 51 66 65 66 7 0 137 -147 291 -327 462 -542 454 -534 496 
                             -496 33 29 200 372 194 397 -3 12 -81 109 -173 217 -92 108 -284 333 -427 500 
-                            -253 298 -310 359 -331 359 -5 0 -23 -9 -40 -19z"/>
+                            -253 298 -310 359 -331 359 -5 0 -23 -9 -40 -19z" />
                         <path d="M286 649 l-26 -20 0 -178 c0 -168 1 -179 21 -197 20 -18 56 -19 1184 
                             -22 l1162 -2 26 21 27 20 0 179 0 179 -26 20 c-27 21 -28 21 -1184 21 -1156 0 
-                            -1157 0 -1184 -21z"/>
+                            -1157 0 -1184 -21z" />
                     </g>
                 </svg>
             </div>
-            
+
             <div class="login-container">
                 <form id="loginForm" class="login-form">
                     <div class="input-group">
@@ -69,10 +68,86 @@
                 <div class="brand">
                     <p class="brand-logo">Fylo</p>
                 </div>
+
             </div>
         </div>
-    </div>
-    <script src="js/script.js"></script>
+        <!-- Registration Modal -->
+        <div id="registrationModal" class="modal">
+            <div class="modal-content">
+                <button class="back-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+
+                <!-- Email Step -->
+                <!-- Email Step -->
+                <div class="modal-step active" id="emailStep">
+                    <h2>Qual é o seu email?</h2>
+                    <p class="modal-subtitle">Insira o email para contato. Ninguém verá essa informação no seu perfil.
+                    </p>
+
+                    <div class="modal-input-group">
+                        <input type="email" id="registerEmail" placeholder=" " class="modal-input">
+                        <label class="modal-input-label" for="registerEmail">Email</label>
+                        <span class="email-validation-message"></span>
+                    </div>
+
+                    <button class="modal-button" disabled>Avançar</button>
+                    <button class="modal-link">Já tenho uma conta</button>
+                </div>
+
+                <!-- Password Step -->
+                <div class="modal-step" id="passwordStep">
+                    <h2>Escolha uma senha</h2>
+                    <p class="modal-subtitle">Crie uma senha segura com pelo menos 8 caracteres.</p>
+
+                    <div class="modal-input-group">
+                        <input type="password" id="registerPassword" placeholder=" " class="modal-input">
+                        <label class="modal-input-label" for="registerPassword">Senha</label>
+                        <span class="password-validation-message"></span>
+                    </div>
+
+                    <button class="modal-button" disabled>Avançar</button>
+                    <button class="modal-link">Voltar</button>
+                </div>
+
+                <!-- Birthday Step -->
+                <div class="modal-step" id="birthdayStep">
+                    <h2>Qual é a sua data de nascimento?</h2>
+                    <p class="modal-subtitle">Use sua própria data de nascimento, mesmo que esta seja a conta de uma
+                        empresa, de um animal de estimação ou de qualquer outro tipo. Ninguém verá essa informação a não
+                        ser que você decida compartilhá-la.</p>
+
+                    <div class="modal-input-group">
+                        <input type="date" id="registerBirthday" placeholder=" " class="modal-input">
+                        <label class="modal-input-label" for="registerBirthday" id="birthdayLabel">Data de Nascimento (0
+                            anos)</label>
+                        <span class="birthday-validation-message"></span>
+                    </div>
+
+                    <button class="modal-button" disabled>Avançar</button>
+                    <button class="modal-link">Voltar</button>
+                </div>
+                
+                <!-- Username Step -->
+                <div class="modal-step" id="usernameStep">
+                    <h2>Escolha um nome de usuário</h2>
+                    <p class="modal-subtitle">Escolha um nome de usuário único para sua conta.</p>
+
+                    <div class="modal-input-group">
+                        <input type="text" id="registerUsername" placeholder=" " class="modal-input">
+                        <label class="modal-input-label" for="registerUsername">Nome de usuário</label>
+                        <span class="username-validation-message"></span>
+                    </div>
+
+                    <button class="modal-button" disabled>Criar conta</button>
+                    <button class="modal-link">Voltar</button>
+                </div>
+
+            </div>
+            <script src="js/script.js"></script>
 </body>
 
 </html>

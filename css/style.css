@@ -494,3 +494,228 @@ body {
   .alert-button:not(:last-child) {
     border-right: 1px solid rgba(255, 255, 255, 0.15);
   }
+
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(7, 18, 23, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .modal.show {
+    opacity: 1;
+  }
+  
+  .modal-content {
+    position: relative;
+    top: 10%;
+    transform: translateY(-50%);
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    background-color: rgba(7, 18, 23, 0.98);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 32px 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-out;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+    .modal-content {
+        position: relative;
+        top: 20%;
+        transform: translateY(-50%);
+        border-radius: 30px;
+        max-height: 80vh;
+    }
+}
+
+input[type="date"] {
+    appearance: none;
+    -webkit-appearance: none;
+    color: white;
+    font-family: inherit;
+    font-size: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 16px;
+    border-radius: 12px;
+    width: 100%;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    opacity: 0.5;
+    cursor: pointer;
+}
+  
+  .modal.show .modal-content {
+    transform: translateY(0);
+  }
+  
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+  }
+  
+  .back-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .modal-content h2 {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 16px;
+  }
+  
+  .modal-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    margin-bottom: 32px;
+    line-height: 1.4;
+  }
+  
+/* Estilo para os labels dos inputs do registro */
+.modal-input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.modal-input {
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: #071217;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.modal-input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.modal-input-label {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.modal-input:focus + .modal-input-label,
+.modal-input:not(:placeholder-shown) + .modal-input-label {
+    top: 0;
+    font-size: 12px;
+    background-color: var(--card-bg);
+    padding: 0 4px;
+}
+
+.modal-input::placeholder {
+    color: transparent;
+}
+
+/* Estilo para as mensagens de validação */
+.email-validation-message,
+.password-validation-message,
+.birthday-validation-message,
+.username-validation-message {
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    color: #ff4444; /* Cor para mensagens de erro */
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.email-validation-message.show,
+.password-validation-message.show,
+.birthday-validation-message.show,
+.username-validation-message.show {
+    opacity: 1;
+}
+
+/* Estilo para mensagens de sucesso (opcional) */
+.birthday-validation-message.success {
+    color: #4CAF50; /* Cor para mensagens de sucesso */
+}
+  
+  .modal-button {
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    border: none;
+    background: #4047F7;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .modal-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .modal-button:not(:disabled):hover {
+    background: #4b52ff;
+  }
+  
+  .modal-link {
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    margin-top: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .modal-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Password Step */
+  .modal-step {
+    display: none;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .modal-step.active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+  }
